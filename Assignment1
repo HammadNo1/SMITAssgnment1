@@ -1,0 +1,241 @@
+//Q1
+void main() {
+  int length = 5;
+  int breadth = 5;
+  
+  if (length == breadth) {
+    print('It is a square.');
+  } else {
+    print('It is a rectangle.');
+  }
+}
+
+//Q2
+void main() {
+  int age1 = 25;
+  int age2 = 30;
+
+  if (age1 > age2) {
+    print("Person 1 is older than Person 2.");
+    print("Person 2 is younger than Person 1.");
+  } else if (age1 < age2) {
+    print("Person 2 is older than Person 1.");
+    print("Person 1 is younger than Person 2.");
+  } else {
+    print("Both persons are of the same age.");
+  }
+}
+
+//Q3
+void main() {
+  int classesHeld = 16;
+  int classesAttended = 10;
+  
+  double attendancePercentage = (classesAttended / classesHeld) * 100;
+  
+  print("Attendance percentage: ${attendancePercentage.toStringAsFixed(2)}%");
+
+  if (attendancePercentage >= 75) {
+    print("Student is allowed to sit in the exam.");
+  } else {
+    print("Student is not allowed to sit in the exam.");
+  }
+}
+
+//Q4
+void main() {
+  int year = 2024;
+  
+  if (year % 4 == 0) {
+    if (year % 100 == 0) {
+      if (year % 400 == 0) {
+        print("$year is a leap year.");
+      } else {
+        print("$year is not a leap year.");
+      }
+    } else {
+      print("$year is a leap year.");
+    }
+  } else {
+    print("$year is not a leap year.");
+  }
+}
+
+//Q5
+void main() {
+  num temperature = 42;
+
+  if (temperature < 0) {
+    print("Freezing weather");
+  } else if (temperature >= 0 && temperature <= 10) {
+    print("Very Cold weather");
+  } else if (temperature > 10 && temperature <= 20) {
+    print("Cold weather");
+  } else if (temperature > 20 && temperature <= 30) {
+    print("Normal in Temp");
+  } else if (temperature > 30 && temperature <= 40) {
+    print("It's Hot");
+  } else {
+    print("It's Very Hot");
+  }
+}
+
+//Q6
+void main() {
+  String alphabet = 'a';
+
+  if (alphabet == 'a' ||
+      alphabet == 'e' ||
+      alphabet == 'i' ||
+      alphabet == 'o' ||
+      alphabet == 'u') {
+    print('$alphabet is a vowel.');
+  } else {
+    print('$alphabet is a consonant.');
+  }
+}
+
+//Q7
+void main() {
+  int customerId = 1001;
+  String customerName = 'Hamid';
+  int unitsConsumed = 800;
+  double chargePerUnit;
+  double netBillAmount;
+
+  if (unitsConsumed <= 199) {
+    chargePerUnit = 1.20;
+  } else if (unitsConsumed >= 200 && unitsConsumed < 400) {
+    chargePerUnit = 1.50;
+  } else if (unitsConsumed >= 400 && unitsConsumed < 600) {
+    chargePerUnit = 1.80;
+  } else {
+    chargePerUnit = 2.00;
+  }
+
+  netBillAmount = unitsConsumed * chargePerUnit;
+
+  print("Customer IDNO: $customerId");
+  print("Customer Name: $customerName");
+  print("Unit Consumed: $unitsConsumed");
+  print("Amount Charges @Rs. $chargePerUnit per unit: $netBillAmount");
+  print("Net Bill Amount: $netBillAmount");
+}
+
+//Q8
+void main() {
+  String studentName = 'Ali Fareed';
+  int rollNumber = 1001;
+  String className = 'Class 10';
+  
+  int subject1Marks = 85;
+  int subject2Marks = 92;
+  int subject3Marks = 78;
+  int subject4Marks = 88;
+  int subject5Marks = 95;
+
+  int totalMarks = subject1Marks + subject2Marks + subject3Marks + subject4Marks + subject5Marks;
+  double percentage = (totalMarks / 500) * 100;
+  String grade;
+
+  if (percentage >= 90) {
+    grade = 'A';
+  } else if (percentage >= 80) {
+    grade = 'B';
+  } else if (percentage >= 70) {
+    grade = 'C';
+  } else if (percentage >= 60) {
+    grade = 'D';
+  } else {
+    grade = 'F';
+  }
+
+  print('Student Name: $studentName');
+  print('Roll Number: $rollNumber');
+  print('Class: $className');
+  print('------------------------------');
+  print('Subject 1 Marks: $subject1Marks');
+  print('Subject 2 Marks: $subject2Marks');
+  print('Subject 3 Marks: $subject3Marks');
+  print('Subject 4 Marks: $subject4Marks');
+  print('Subject 5 Marks: $subject5Marks');
+  print('------------------------------');
+  print('Total Marks: $totalMarks');
+  print('Percentage: ${percentage.toStringAsFixed(2)}%');
+  print('Grade Obtained: $grade');
+}
+
+//Q9
+void main() {
+  int number = 63;
+
+  if (number % 2 == 0) {
+    print('$number is even.');
+
+    if (number % 5 == 0) {
+      print('$number is divisible by 5.');
+    } else {
+      print('$number is not divisible by 5.');
+    }
+  } else {
+    print('$number is odd.');
+
+    if (number % 7 == 0) {
+      print('$number is divisible by 7.');
+    } else {
+      print('$number is not divisible by 7.');
+    }
+  }
+}
+
+//Q10
+import 'dart:io';
+
+void main() {
+  print('Enter three numbers:');
+
+  int number1 = int.parse(stdin.readLineSync()!);
+  int number2 = int.parse(stdin.readLineSync()!);
+  int number3 = int.parse(stdin.readLineSync()!);
+
+  int maxNumber = number1;
+  int minNumber = number1;
+
+  if (number2 > maxNumber) {
+    maxNumber = number2;
+  }
+
+  if (number3 > maxNumber) {
+    maxNumber = number3;
+  }
+
+  if (number2 < minNumber) {
+    minNumber = number2;
+  }
+
+  if (number3 < minNumber) {
+    minNumber = number3;
+  }
+
+  print('The greatest number is: $maxNumber');
+  print('The lowest number is: $minNumber');
+}
+
+
+//Q11
+import 'dart:math';
+
+void main() {
+  double number = 25;
+  double squareRoot = sqrt(number);
+
+  print('The square root of $number is $squareRoot');
+}
+
+//Q12
+void main() {
+  double celsius = 25;
+  double fahrenheit = (celsius * 9/5) + 32;
+
+  print('$celsius degrees Celsius is equal to $fahrenheit degrees Fahrenheit');
+}
